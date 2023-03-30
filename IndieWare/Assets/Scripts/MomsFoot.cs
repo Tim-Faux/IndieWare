@@ -18,6 +18,8 @@ public class MomsFoot : MonoBehaviour
 		transform.position = SelectFootPos();
 		timeRemaining = TimeBetweenStomps;
 		stompTimeRemaining = LengthOfStomp;
+		var momsShadow = GameObject.Find("Mom's Shadow");
+		momsShadow.transform.position = new Vector2(transform.position.x, momsShadow.transform.position.y);
 	}
 
     // Update is called once per frame
@@ -40,6 +42,8 @@ public class MomsFoot : MonoBehaviour
 				stompTimeRemaining = LengthOfStomp;
 				timeRemaining = TimeBetweenStomps;
 				transform.position = SelectFootPos();
+				var momsShadow = GameObject.Find("Mom's Shadow");
+				momsShadow.transform.position = new Vector2(transform.position.x, momsShadow.transform.position.y);
 			}
 		}
 	}
