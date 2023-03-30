@@ -12,6 +12,7 @@ public class MomsFoot : MonoBehaviour
 	private const float FootStartYPos = 9;
 	private float timeRemaining;
 	private float stompTimeRemaining;
+	private int? previousFootPos;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -51,6 +52,11 @@ public class MomsFoot : MonoBehaviour
 	// Select one of 3 positions for the foot 
 	public Vector2 SelectFootPos()
 	{
-		return new Vector2(FootMiddleXPos + (Random.Range(-1, 2) * 5), FootStartYPos);
+		var randPos = Random.Range(-1, 2);
+		while (randPos == previousFootPos) {
+			randPos = Random.Range(-1, 2);
+		}
+		previousFootPos = randPos;
+		return new Vector2(FootMiddleXPos + (randPos * 5), FootStartYPos);
 	}
 }
