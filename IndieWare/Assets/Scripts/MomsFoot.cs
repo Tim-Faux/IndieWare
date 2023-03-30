@@ -5,8 +5,9 @@ using UnityEngine;
 public class MomsFoot : MonoBehaviour
 {
 	[SerializeField]
-	public const float TimeBetweenStomps = 3;
-	private const float LengthOfStomp = 1;
+	float TimeBetweenStomps;
+	[SerializeField]
+	float LengthOfStomp;
 	private const float FootMiddleXPos = 0;
 	private const float FootStartYPos = 9;
 	private float timeRemaining;
