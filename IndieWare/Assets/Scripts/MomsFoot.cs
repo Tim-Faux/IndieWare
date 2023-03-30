@@ -10,6 +10,7 @@ public class MomsFoot : MonoBehaviour
 	float LengthOfStomp;
 	private const float FootMiddleXPos = 0;
 	private const float FootStartYPos = 9;
+	private const float FootStompYPos = 2;
 	private float timeRemaining;
 	private float stompTimeRemaining;
 	private int? previousFootPos;
@@ -31,11 +32,11 @@ public class MomsFoot : MonoBehaviour
 			timeRemaining -= Time.deltaTime;
 		}
 		else if(issac != null && issac.transform.position.x == transform.position.x) {
-			transform.position = new Vector2(transform.position.x, 4.5f);
+			transform.position = new Vector2(transform.position.x, FootStompYPos);
 			Destroy(issac);
 		}
 		else {
-			transform.position = new Vector2(transform.position.x, 4.5f);
+			transform.position = new Vector2(transform.position.x, FootStompYPos);
 			if (stompTimeRemaining > 0) {
 				stompTimeRemaining -= Time.deltaTime;
 			}
